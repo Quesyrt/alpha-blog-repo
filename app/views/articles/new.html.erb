@@ -1,5 +1,15 @@
 <h1>Création d'un article !!</h1>
 
+
+<% if @article.errors.any? %>
+<h2> Article non-envoyé car :</h2>
+   <ul>
+     <% @article.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+   </ul>
+<% end %>
+
 <%= form_for @article do |f| %>
 
     <P>
