@@ -1,31 +1,3 @@
 <h1>Création d'un article !!</h1>
 
-
-<% if @article.errors.any? %>
-<h2> Article non-envoyé car :</h2>
-   <ul>
-     <% @article.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
-   </ul>
-<% end %>
-
-<%= form_for @article do |f| %>
-
-    <P>
-    <%=  f.label :title%> <br />
-    <%=  f.text_field :title%>
-    </P>
-    
-    <P>
-    <%=  f.label :description%> <br />
-    <%=  f.text_area :description%>
-    </P>
-    
-    <p>
-        <%= f.submit %>
-    </p>
-
-<% end %>
-
-<%= link_to "Retour aux articles", articles_path %>
+<%= render 'form' %>
