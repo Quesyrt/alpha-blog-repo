@@ -1,12 +1,6 @@
 <h1>Edition d'article...</h1>
 
-<% if @article.errors.any? %>
-<h2> Modif non-reçue car :</h2>
-   <ul>
-     <% @article.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
-   </ul>
-<% end %>
+<%= render 'validmsg' %>
+
 
 <%= render 'form' %>
