@@ -15,3 +15,39 @@ $navbar-default-bg: #424242;
 .center {
     text-align: center;
 }
+
+.jumbotron {
+    background-image: asset-url('middle.jpg');
+    background-position : 50% 50%;
+    height: 550px;
+    
+}
+
+.jumbotron h1, .jumbotron p {
+    color: #FAFAFA ;
+}
+
+.btn-primary {
+    background-color: #2965D7;
+}
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #b3b3ff;
+    color: #666666;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}
