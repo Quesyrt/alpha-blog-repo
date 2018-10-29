@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
     has_many :articles
+    has_secure_password #Harry le met après validates email... plus joli là
     
     before_save {self.email.downcase!}
     
