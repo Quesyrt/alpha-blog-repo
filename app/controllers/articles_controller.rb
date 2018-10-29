@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     
     def create
         @article = Article.new(article_params)
-        
+        @article.user = User.first #temporaire !! création user en attente
         if @article.save
             flash[:success] = "Article bien créé !"
             redirect_to article_path(@article)
