@@ -1,0 +1,15 @@
+<h1 align="center">Profil de <b><%= @user.username %></b></h1>
+
+<div class = 'row'>
+    <div class = 'col-md-6 col-md-offset-3 center'>
+        <%= gravatar_for @user, size: 120 %>
+    </div>
+</div>
+
+<h3 align = 'center'>Articles de <%= @user.username %></h3>
+
+<div class = 'row'>
+    <div class = 'col-md-6 col-md-offset-3 center'>
+        <%= render 'articles/liste', obj: @user.articles %>
+    </div>
+</div>
