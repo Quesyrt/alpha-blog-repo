@@ -16,9 +16,14 @@
                 <td><%= truncate(article.description, length:60) %></td>
                 <td><small> Created by <b><%= article.user.username if article.user%></b> <%= time_ago_in_words(article.created_at) %> ago, 
                                 and last modified <%= time_ago_in_words(article.updated_at) %> ago </small></td> <!-- solution temporaire inclusion des articles antérieurs au modèle user -->
-                <td><%= link_to "Éditer", edit_article_path(article), class: "btn btn-xs btn-primary" %></td>
-                <td><%= link_to "Supprimer", article_path(article), method: :delete, class: "btn btn-xs btn-danger" %></td>
                 
+                <% if logged_in? && current_user == article.user %>
+                    <td><%= link_to "Éditer", edit_article_path(article), class: "btn btn-xs btn-primary" %></td>
+                    <td><%= link_to "Supprimer", article_path(article), method: :delete, class: "btn btn-xs btn-danger" %></td>
+                <% else %>
+                    <td></td>
+                    <td></td>
+                <% end %>
             </tr>
         <% end %>
             

@@ -7,12 +7,15 @@
             
             <% if @article.user %>
                 <div align="right">
-                    <small>Article par <%= gravatar_for @article.user, size: 50 %> <%= link_to @article.user.username, user_path(@article.user) %></small>
+                    Article par <%= gravatar_for @article.user, size: 35 %> <%= link_to @article.user.username, user_path(@article.user) %>
                 </div>
             <% end %>
             <div class="article-actions">
-                <%= link_to "Éditer l'article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
-                <%= link_to "Supprimer l'article", article_path(@article), method: :delete, class: "btn btn-xs btn-danger" %>
+                
+                <% if logged_in? && current_user == @article.user %>
+                    <%= link_to "Éditer l'article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+                    <%= link_to "Supprimer l'article", article_path(@article), method: :delete, class: "btn btn-xs btn-danger" %>
+                <% end %>
                 <%= link_to "Retour aux articles", articles_path, class: "btn btn-xs btn-success" %>
             </div>
         </div>
