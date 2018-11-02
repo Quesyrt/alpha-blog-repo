@@ -4,6 +4,15 @@
         
         <p><%= link_to "Créer un nouvel article", new_article_path %> </p>
         
+        
+        <div align="center">
+            <%= will_paginate @articles %>
+        </div>
+        
         <%= render 'liste', obj: @articles %>
+        
+        <div align="center">
+            <%= will_paginate @articles %>
+        </div>
     </div>
 </div>
